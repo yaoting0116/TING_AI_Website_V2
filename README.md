@@ -1,5 +1,6 @@
-#TING AIWebsite V2 🎵🖼️
-##Overview
+# TING AIWebsite V2 🎵🖼️
+
+## Overview
 
 I built TING-AI as my personal portfolio and playground for AI-related works. The site stores and showcases outputs, experiments, and demos including AI-generated images, audio, model demos, prompts, notebooks, and small interactive demos. The site is generated from a small Flask app and static assets, then exported into a build/ folder so it can be deployed as a static site (Cloudflare Pages is recommended).
 
@@ -37,4 +38,5 @@ Project layout
 ├── freeze.py             # Export script: render routes -> build/
 ├── requirements.txt
 └── README.md
+
 
