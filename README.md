@@ -1,4 +1,4 @@
-# TING AIWebsite V2 🎵🖼️
+# TING AI Website V2 🎵🖼️
 
 ## Overview
 
@@ -31,15 +31,16 @@ I built TING-AI as my personal portfolio and playground for AI-related works. Th
 ```
 Project layout
 / (project root)
-├── app.py                # Flask application (app object)
 ├── static/
 │   ├── images/           # AI outputs (png/jpg/webp)
 │   ├── music/            # Audio files (mp3/wav)
 │   └── css/, js/, ...
+├── app.py                # Flask application (app object)
 ├── freeze.py             # Export script: render routes -> build/
 ├── requirements.txt
 └── README.md
 ```
+
 
 
 
