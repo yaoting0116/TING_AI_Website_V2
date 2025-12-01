@@ -40,6 +40,14 @@ Project layout
 ├── requirements.txt
 └── README.md
 ```
+### Prerequisites  
+- Python 3.8+  
+- Flask
+- Jinja2
+
+## Demo (Live Version) 🌐  
+You can see the live, deployed version of this site at:  
+[👉 Live Demo on Render]([TING AI Website V2](https://ting-ai-website-v2.pages.dev/)) 
 
 
 
