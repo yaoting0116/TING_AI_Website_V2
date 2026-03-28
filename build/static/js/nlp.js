@@ -146,16 +146,21 @@ async function sendToServerAndRender(userText) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages: outgoing })
     });
-    
+
     const text = await resp.text();
-    
+
     if (!resp.ok) {
       console.error('API error:', resp.status, text);
+      addMessage('assistant', `伺服器錯誤：${resp.status}`);
+      renderMessages();
       return;
     }
-    
+
     const j = JSON.parse(text);
-    const reply = j && j.ok ? (j.reply || '（空回覆）') : (j.reply || ('伺服器錯誤：' + (j.error || '未知錯誤')));
+    const reply = j && j.ok
+      ? (j.reply || '（空回覆）')
+      : (j.reply || ('伺服器錯誤：' + (j.error || '未知錯誤')));
+
     addMessage('assistant', reply);
     renderMessages();
   } catch (e) {
