@@ -141,12 +141,20 @@ async function sendToServerAndRender(userText) {
   addMessage('user', userText);
 
   try {
-    const resp = await fetch('/functions/api/chat', {
+    const resp = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages: outgoing })
     });
-    const j = await resp.json();
+    
+    const text = await resp.text();
+    
+    if (!resp.ok) {
+      console.error('API error:', resp.status, text);
+      return;
+    }
+    
+    const j = JSON.parse(text);
     const reply = j && j.ok ? (j.reply || '（空回覆）') : (j.reply || ('伺服器錯誤：' + (j.error || '未知錯誤')));
     addMessage('assistant', reply);
     renderMessages();
